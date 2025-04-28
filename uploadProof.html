@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah | Vista - Travel Indonesia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="section__container proof__container">
+        <h2 class="section__header">Upload Proof of Booking & Transfer</h2>
+        <p class="section__description">
+            Please upload your booking confirmation and transfer receipt below.
+        </p>
+
+        <form id="uploadProofForm" class="proof__form" method="POST" action="uploadProof.php" enctype="multipart/form-data">
+            <div class="form__group">
+                <label for="bookingProof">Upload Booking Confirmation</label>
+                <input type="file" id="bookingProof" name="bookingProof" accept="image/*" required>
+            </div>
+            <div class="form__group">
+                <label for="transferProof">Upload Transfer Receipt</label>
+                <input type="file" id="transferProof" name="transferProof" accept="image/*" required>
+            </div>
+            <button class="btn" type="submit">Submit Proof</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
