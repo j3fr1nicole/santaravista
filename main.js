@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //trip plan
 function redirectToWhatsApp(event) {
-  event.preventDefault(); // Mencegah form langsung melakukan submit
+  //event.preventDefault(); // Mencegah form langsung melakukan submit
 
   // Ambil data dari form
   const form = document.getElementById("tripForm");
@@ -138,29 +138,3 @@ Arrival: ${tripStartDate}, Departure: ${tripEndDate}. Additional message: ${mess
     window.location.href = whatsappUrl;
   }, 500); // Delay untuk memastikan PHP memproses data sebelum redirect
 }
-
-// Submit upload proof
-
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("uploadProofForm");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah reload halaman default
-
-    const formData = new FormData(form);
-
-    fetch("uploadProof.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        alert("Upload berhasil! Anda akan diarahkan ke halaman utama.");
-        window.location.href = "index.html"; // Ganti dengan halaman utama Anda
-      })
-      .catch((error) => {
-        alert("Terjadi kesalahan, silakan coba lagi.");
-        console.error("Error:", error);
-      });
-  });
-});
