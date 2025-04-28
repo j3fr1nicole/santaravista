@@ -109,32 +109,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//trip plan
-function redirectToWhatsApp(event) {
-  //event.preventDefault(); // Mencegah form langsung melakukan submit
-
-  // Ambil data dari form
-  const form = document.getElementById("tripForm");
-  const name = form.name.value;
-  const email = form.email.value;
-  const destination = form.destination.value;
-  const people = form.people.value;
-  const car = form.car.value;
-  const tripStartDate = form.tripStartDate.value;
-  const tripEndDate = form.tripEndDate.value;
-  const message = form.message.value;
-
-  // URL WhatsApp dengan pesan yang diformat
-  const whatsappNumber = "6281111170403"; // Ganti dengan nomor WhatsApp Anda
-  const whatsappMessage = `Hello, my name is ${name}. I would like to book a trip to ${destination} for ${people} people and $car seats car. 
-Arrival: ${tripStartDate}, Departure: ${tripEndDate}. Additional message: ${message}`;
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-  // Submit form ke PHP untuk menyimpan data
-  form.submit();
-
-  // Redirect ke WhatsApp
-  setTimeout(() => {
-    window.location.href = whatsappUrl;
-  }, 500); // Delay untuk memastikan PHP memproses data sebelum redirect
-}
